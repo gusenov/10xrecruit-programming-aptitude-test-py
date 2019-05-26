@@ -7,6 +7,19 @@ row_len = None
 rooms_weights = None
 
 
+def two2one(row, col):
+    global row_len
+    return row_len * row + col
+
+
+def get_bit(i, pos):
+    return i >> pos & 1
+
+
+def set_bit(i, pos):
+    return i | (1 << pos)
+
+
 def find_solution(k, closed_rooms):
     global rooms_len
     global row_len
@@ -16,23 +29,22 @@ def find_solution(k, closed_rooms):
         amount = 0
         for i in range(rooms_len):
             for j in range(row_len):
-                if not closed_rooms[i][j]:
+                if get_bit(closed_rooms, two2one(i, j)) == 0:
                     amount += rooms_weights[i][j]
         return amount
 
     max_value = 0
     for i in range(rooms_len):
-        if any(closed_rooms[i]):
+        if any([get_bit(closed_rooms, two2one(i, j)) for j in range(row_len)]):
             continue
         for j in range(row_len):
-            if not closed_rooms[i][j]:
-                if i - 1 >= 0 and closed_rooms[i - 1][(j + 1) % 2]:
+            if get_bit(closed_rooms, two2one(i, j)) == 0:
+                if i - 1 >= 0 and get_bit(closed_rooms, two2one(i - 1, (j + 1) % 2)) == 1:
                     continue
-                if i + 1 < len(closed_rooms) and closed_rooms[i + 1][(j + 1) % 2]:
+                if i + 1 < rooms_len and get_bit(closed_rooms, two2one(i + 1, (j + 1) % 2)) == 1:
                     continue
 
-                new_closed_rooms = [[closed_rooms[i][j] for j in range(row_len)] for i in range(rooms_len)]
-                new_closed_rooms[i][j] = True
+                new_closed_rooms = set_bit(closed_rooms, two2one(i, j))
                 value = find_solution(k - 1, new_closed_rooms)
                 if value > max_value:
                     max_value = value
@@ -67,8 +79,7 @@ while True:
     rooms_len = len(rooms)
     row_len = len(rooms[0]) if rooms_len > 0 else 0
     rooms_weights = rooms
-    closed_rooms = [[False, False] for i in range(len(rooms))]
 
-    print(find_solution(k, closed_rooms))
+    print(find_solution(k, 0))
 
 f.close()
