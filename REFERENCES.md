@@ -1,0 +1,12 @@
+- [python - Pass list to function by value - Stack Overflow](https://stackoverflow.com/questions/15377050/pass-list-to-function-by-value)
+- [4. Map, Filter and Reduce — Python Tips 0.1 documentation](http://book.pythontips.com/en/latest/map_filter.html)
+- [Python any() Function](https://www.w3schools.com/python/ref_func_any.asp)
+- [Python Bitwise Operators Example](https://www.tutorialspoint.com/python/bitwise_operators_example.htm)
+- [Битовая маска — Википедия](https://ru.wikipedia.org/wiki/%D0%91%D0%B8%D1%82%D0%BE%D0%B2%D0%B0%D1%8F_%D0%BC%D0%B0%D1%81%D0%BA%D0%B0)
+- [Bit Manipulation For Beginners | TutorialEdge.net](https://tutorialedge.net/compsci/bit-manipulation-for-beginners/)
+- [c - Map a 2D array onto a 1D array - Stack Overflow](https://stackoverflow.com/questions/2151084/map-a-2d-array-onto-a-1d-array)
+- [BitManipulation - Python Wiki](https://wiki.python.org/moin/BitManipulation)
+- [python - How to modify bits in an integer? - Stack Overflow](https://stackoverflow.com/questions/12173774/how-to-modify-bits-in-an-integer)
+- [Python: How do I extract specific bits from a byte? - Stack Overflow](https://stackoverflow.com/questions/45220959/python-how-do-i-extract-specific-bits-from-a-byte/45221136)
+- [optimization - Python equivalence to inline functions or macros - Stack Overflow](https://stackoverflow.com/questions/6442050/python-equivalence-to-inline-functions-or-macros)
+
